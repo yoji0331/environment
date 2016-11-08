@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026105349) do
+ActiveRecord::Schema.define(version: 20161108074044) do
 
   create_table "data", force: :cascade do |t|
     t.integer  "survey_id"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20161026105349) do
     t.string   "reseacher_name"
     t.datetime "date"
     t.string   "weather"
-    t.string   "temperature"
+    t.float    "temperature"
     t.float    "latitude"
     t.float    "longitude"
     t.float    "value1"
@@ -67,5 +67,7 @@ ActiveRecord::Schema.define(version: 20161026105349) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
