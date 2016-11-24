@@ -39,4 +39,14 @@ class DatumTest < ActiveSupport::TestCase
     assert_not @datum.valid?
   end
   
+  test "weather" do
+    @datum.weather = "a" * 257
+    assert_not @datum.valid?
+  end
+  
+  test "temperature" do
+    @datum.temperature = 101
+    assert_not @datum.valid?
+  end
+  
 end
